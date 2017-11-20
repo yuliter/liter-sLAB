@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <title>div移动</title>  
+        <script type="text/javascript" src="js/move.js" ></script> 
+    </head>  
+    <body>  
+        <canvas id="divCont" style="position: absolute;left: 100px;top: 100px;width: 200px;height: 200px;background-color: #FFE4C4;" 
+	    onmousedown="mouse_down(this);" onmousemove="mouse_move(this);" onmouseup="mouse_up(this);" onmouseover="mouse_over(this);"></canvas>  
+    <script>
+    var c=document.getElementById("divCont");
+    var ctx=c.getContext("2d");
+    ctx.moveTo(0,50);
+    ctx.lineTo(300,50)
+    ctx.stroke();
+    if(sessionStorage.getItem("width").toString()&& c.style.left!=sessionStorage.getItem("left")){
+    c.style.width=sessionStorage.getItem("width");
+    c.style.height=sessionStorage.getItem("height");
+    c.style.left=sessionStorage.getItem("left");
+    c.style.top=sessionStorage.getItem("top");
+    }
+    </script>
+    </body>  
+</html>  
